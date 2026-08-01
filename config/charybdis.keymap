@@ -4,6 +4,9 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
+&lt {
+};
+
 / {
     macros {
         To1_macro: To1_macro {
@@ -39,13 +42,13 @@
 &kp GRAVE       &kp NUMBER_1  &kp NUMBER_2        &kp NUMBER_3      &kp NUMBER_4    &kp N5                &kp N6        &kp N7       &kp N8  &kp N9  &kp N0      &kp BACKSLASH
 &kp ESC         &kp Q         &kp W               &kp E             &kp R           &kp T                 &kp Y         &kp U        &kp I   &kp O   &kp DELETE  &kp BACKSPACE
 &kp TAB         &kp A         &mt LEFT_CONTROL S  &mt LEFT_SHIFT D  &mt LEFT_ALT F  &mt LEFT_CONTROL G    &kp H         &kp J        &kp K   &kp L   &kp P       &kp ENTER
-&kp LEFT_SHIFT  &kp Z         &kp X               &kp C             &kp V           &lt 2 B               &kp COMMA     &kp B        &kp N   &kp M   &mo 4       &kp RIGHT_SHIFT
+&kp LEFT_SHIFT  &kp Z         &kp X               &kp C             &kp V           &mo 4                 &kp COMMA     &kp B        &kp N   &kp M   &mo 4       &kp RIGHT_SHIFT
                                                   &kp LEFT_SHIFT    &lt 1 SPACE     &kp BACKSPACE         &lt 2 ENTER   &lt 1 SPACE
                                                                     &kp LEFT_WIN    &kp LEFT_CONTROL      &kp LEFT_ALT
             >;
         };
 
-        F_layers {
+        Num_Layer {
             bindings = <
 &trans  &trans        &trans        &trans        &trans        &trans           &trans                 &trans         &trans            &trans             &trans  &trans
 &trans  &kp NUMBER_0  &kp N7        &kp N8        &kp N9        &kp BACKSPACE    &kp RIGHT_PARENTHESIS  &kp AMPERSAND  &kp PLUS          &kp MINUS          &none   &trans
@@ -56,14 +59,14 @@
             >;
         };
 
-        BT_layers {
+        F_Layer {
             bindings = <
-&trans  &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans      &trans  &trans   &trans   &trans   &trans
-&trans  &trans          &trans        &trans        &trans        &trans          &trans      &kp F9  &kp F10  &kp F11  &kp F12  &trans
-&trans  &bt BT_CLR_ALL  &trans        &trans        &trans        &trans          &trans      &kp F5  &kp F6   &kp F7   &kp F8   &trans
-&trans  &trans          &trans        &bt BT_CLR    &trans        &trans          &bt BT_NXT  &kp F1  &kp F2   &kp F3   &kp F4   &trans
-                                      &trans        &trans        &trans          &trans      &trans
-                                                    &trans        &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans   &trans   &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp F1  &kp F2   &kp F3   &kp F4   &trans
+                        &trans  &trans  &trans    &trans  &trans
+                                &trans  &trans    &trans
             >;
         };
 
@@ -78,25 +81,14 @@
             >;
         };
 
-        snipe-layers {
+        Mouse-layer {
             bindings = <
-&trans  &trans          &trans       &trans    &trans         &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &kp PAGE_UP  &kp UP    &kp PAGE_DOWN  &kp HOME        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp INSERT      &kp LEFT     &kp DOWN  &kp RIGHT      &kp END         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &msc SCRL_DOWN  &mkp MB2     &mkp MB3  &mkp MB1       &msc SCRL_UP    &trans  &trans  &trans  &trans  &trans  &trans
-                                     &trans    &trans         &trans          &trans  &trans
-                                               &trans         &trans          &trans
-            >;
-        };
-
-        layer_5 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
-                                &trans  &trans    &trans
+&trans  &trans      &trans       &trans    &trans         &trans      &trans          &trans        &trans        &trans        &trans        &trans
+&trans  &trans      &kp PAGE_UP  &kp UP    &kp PAGE_DOWN  &kp HOME    &bt BT_CLR_ALL  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &kp INSERT  &kp LEFT     &kp DOWN  &kp RIGHT      &kp END     &trans          &trans        &trans        &trans        &trans        &trans
+&trans  &trans      &trans       &trans    &trans         &trans      &msc SCRL_DOWN  &mkp MB1      &mkp MB3      &mkp MB2      &msc SCRL_UP  &trans
+                                 &trans    &trans         &trans      &trans          &trans
+                                           &trans         &trans      &trans
             >;
         };
     };
